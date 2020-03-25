@@ -12,6 +12,10 @@ func _ready():
 	set_process(true)
 	spawn_enemies(24)
 
+func _process(delta):
+	if enemies.get_child_count() == 0:
+		spawn_enemies(24)
+
 func spawn_enemies(num):
 	for i in num:
 		var e = enemy.instance()
