@@ -1,14 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://sprites/Background.webp" type="Texture" id=1]
 [ext_resource path="res://scripts/ParallaxLayer.gd" type="Script" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://sprites/enemy.png" type="Texture" id=4]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 19.584, 15.4958 )
+[ext_resource path="res://scripts/Galaga.gd" type="Script" id=4]
 
 [node name="Galaga" type="Node2D"]
+script = ExtResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 300, 700 )
@@ -32,33 +30,3 @@ __meta__ = {
 }
 
 [node name="Enemies" type="Node2D" parent="."]
-
-[node name="Enemy" type="KinematicBody2D" parent="Enemies" groups=[
-"Enemy",
-]]
-position = Vector2( 130.694, 49.7565 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy"]
-position = Vector2( -0.00442505, 0.00440979 )
-shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="Enemies/Enemy"]
-scale = Vector2( 0.112351, 0.11043 )
-texture = ExtResource( 4 )
-
-[node name="Enemy2" type="KinematicBody2D" parent="Enemies" groups=[
-"Enemy",
-]]
-position = Vector2( 221.068, 50.7129 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy2"]
-position = Vector2( 0.379639, -0.0765533 )
-shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="Enemies/Enemy2"]
-position = Vector2( 0.174194, 0.122162 )
-scale = Vector2( 0.112351, 0.11043 )
-texture = ExtResource( 4 )
-__meta__ = {
-"_edit_group_": true
-}
