@@ -7,7 +7,6 @@ signal enemy_killed
 func _ready():
 	_init_tween()
 	death.interpolate_property(self, 'scale', get_scale(), Vector2(0, 0), 0.3, Tween.TRANS_QUAD, Tween.EASE_OUT)
-	death.interpolate_property(self, 'opacity',1, 0, 0.3,Tween.TRANS_QUAD, Tween.EASE_OUT)
 	
 
 func _init_tween():
