@@ -2,6 +2,7 @@ extends Node2D
 
 onready var movement = get_node("movement")
 onready var death = get_node("death")
+signal enemy_killed
 
 func _ready():
 	_init_tween()
@@ -15,8 +16,8 @@ func _init_tween():
 	movement.start()
 
 func _on_Enemy_body_entered(body):
-	print(body.get_name())
 	#if body.get_name() == 'Projectile':
+	emit_signal("enemy_killed")
 	death.start()
 	$HitSound.play()
 	yield ($HitSound, "finished")
