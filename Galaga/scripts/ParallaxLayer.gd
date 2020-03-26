@@ -15,4 +15,4 @@ func _ready():
 func _process(delta):
 	position.y = position.y +200*delta
 	if(position.y > 800):
-		position.y = 33
+		position.y = 0
