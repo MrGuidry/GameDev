@@ -60,3 +60,5 @@ func shoot():
 		bullet.position = get_position()
 		bullet.position.y -= 60
 		get_parent().add_child(bullet)
+		
+

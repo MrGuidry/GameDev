@@ -6,7 +6,8 @@ signal enemy_killed
 
 func _ready():
 	_init_tween()
-	death.interpolate_property(self, 'scale', get_scale(), Vector2(0, 0), 0.3, Tween.TRANS_QUAD, Tween.EASE_OUT)
+	death.interpolate_property(self, 'scale', get_scale(), Vector2(0, 0), 0.1, Tween.TRANS_QUAD, Tween.EASE_OUT)
+	death.interpolate_property(self, 'opacity',1, 0, 0.1,Tween.TRANS_QUAD, Tween.EASE_OUT)
 	
 
 func _init_tween():
@@ -15,9 +16,13 @@ func _init_tween():
 	movement.start()
 
 func _on_Enemy_body_entered(body):
-	#if body.get_name() == 'Projectile':
+	print(body.get_name())
 	emit_signal("enemy_killed")
 	death.start()
-	$HitSound.play()
-	yield ($HitSound, "finished")
+	queue_free()
+
+
+func _on_Enemy_area_entered(area):
+	emit_signal("enemy_killed")
+	death.start()
 	queue_free()

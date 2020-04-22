@@ -34,7 +34,7 @@ func _on_enemy_killed():
 	score += 15
 	var scoreStr =  "Score: " + (str(score))	
 	score_label.set_text(scoreStr)
-	
+	$HitSound.play()
 	
 	
 	
