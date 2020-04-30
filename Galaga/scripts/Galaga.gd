@@ -3,9 +3,11 @@ extends Node2D
 onready var enemy = preload("res://Enemy.tscn")
 onready var enemies = get_node("Enemies")
 onready var score_label = get_node("hud/score_label")
+onready var life_label = get_node("hud/life_label")
+
 
 var screensize
-var score = 0
+
 
 func _ready():
 	randomize()
@@ -14,8 +16,17 @@ func _ready():
 	spawn_enemies(21)
 
 func _process(delta):
+	if(Global.lives != 0 ):
+		var livesString = "Lives: " + (str(Global.lives))
+		life_label.set_text(livesString)
+	else:
+		get_tree().change_scene("res://gameOver.tscn")
+		
+		
+		
 	if enemies.get_child_count() == 0 && get_tree().get_nodes_in_group("Bullets").size() == 0:
-		spawn_enemies(21)	
+		spawn_enemies(21)
+		
 
 func spawn_enemies(num):
 	for i in num:
@@ -31,10 +42,8 @@ func spawn_enemies(num):
 		enemies.add_child(e)
 
 func _on_enemy_killed():
-	score += 15
-	var scoreStr =  "Score: " + (str(score))	
+	Global.score += 15
+	var scoreStr =  "Score: " + (str(Global.score))	
 	score_label.set_text(scoreStr)
-	
-	
-	
-	
+	$HitSound.play()
+

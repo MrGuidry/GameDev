@@ -9,7 +9,6 @@ var projectile = preload("res://Projectile.tscn")
 func _ready():
 	pass
 
-
 func _process(delta):
 	get_input()
 	move_and_slide(speed)
@@ -60,3 +59,5 @@ func shoot():
 		bullet.position = get_position()
 		bullet.position.y -= 60
 		get_parent().add_child(bullet)
+		
+

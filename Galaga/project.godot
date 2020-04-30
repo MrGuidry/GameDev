@@ -19,6 +19,10 @@ config/name="Galaga"
 run/main_scene="res://welcome.tscn"
 config/icon="res://sprites/icon.png"
 
+[autoload]
+
+Global="*res://scripts/Global.gd"
+
 [display]
 
 window/size/width=600
