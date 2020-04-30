@@ -11,6 +11,8 @@ position = Vector2( -0.0988083, -0.310095 )
 "Player",
 ]]
 position = Vector2( -0.141914, -0.16466 )
+collision_layer = 5
+collision_mask = 5
 script = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ship"]

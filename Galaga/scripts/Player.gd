@@ -9,7 +9,6 @@ var projectile = preload("res://Projectile.tscn")
 func _ready():
 	pass
 
-
 func _process(delta):
 	get_input()
 	move_and_slide(speed)
