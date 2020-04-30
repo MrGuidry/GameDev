@@ -5,11 +5,12 @@ func _on_Button_pressed():
 
 
 func _on_playAgain_pressed():
+	Global.score=0
+	Global.lives=5
+	Global.respawned = true
 	get_tree().change_scene("res://welcome.tscn")
 
-
-
-onready var final_score_label = get_node("final_score_label")
 func _on_gameOver_ready():
+	var final_score_label = get_node("final_score_label")
 	var finalScoreString = "Final Score: " + (str(Global.score))
 	final_score_label.set_text(finalScoreString)
