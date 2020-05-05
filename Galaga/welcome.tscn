@@ -52,3 +52,4 @@ margin_bottom = 60.0
 [node name="newHardcore" parent="menu/center/buttons" instance=ExtResource( 3 )]
 margin_top = 80.0
 margin_bottom = 140.0
+[connection signal="pressed" from="menu/center/buttons/newHardcore" to="." method="_on_newHardcore_pressed"]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/galaga-ship-png-2-transparent.png-5f841627d3996b57bcb428533d4bc944.stex"
+path="res://.import/powerup.png-8aca5d07c61359b58d887fa8f0cdac57.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/galaga-ship-png-2-transparent.png"
-dest_files=[ "res://.import/galaga-ship-png-2-transparent.png-5f841627d3996b57bcb428533d4bc944.stex" ]
+source_file="res://sprites/powerup.png"
+dest_files=[ "res://.import/powerup.png-8aca5d07c61359b58d887fa8f0cdac57.stex" ]
 
 [params]
 

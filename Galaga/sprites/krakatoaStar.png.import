@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/enemy.png-03f80dfd1208a1b3024d79304d31759f.stex"
+path="res://.import/krakatoaStar.png-0ce8eac2c24731dcd621a9eb3661617c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/enemy.png"
-dest_files=[ "res://.import/enemy.png-03f80dfd1208a1b3024d79304d31759f.stex" ]
+source_file="res://sprites/krakatoaStar.png"
+dest_files=[ "res://.import/krakatoaStar.png-0ce8eac2c24731dcd621a9eb3661617c.stex" ]
 
 [params]
 
