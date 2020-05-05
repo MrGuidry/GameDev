@@ -30,22 +30,11 @@ func _ready():
 func _process(delta):
 	if(position.y >= 1000):
 		queue_free()
-	if(side == 1):
-		position.x -= 1
-	if(side == 2):
-		position.x += 1
 	position.y += 8
-	
-	
-func leftShot():
-	side = 1
-	
-func rightShot():
-	side = 2
 	
 func _on_Projectile_area_entered(area):
 	queue_free()
 
 func _on_EnemyProjectile_body_entered(body):
-	Global.lives -= 1
+	Global.lives -= 20
 	queue_free()

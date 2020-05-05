@@ -1,10 +1,14 @@
 extends Node
 
 var multi = 1001
-var respawned = true;
-var lives = 5
+var respawned = true
+var lives = 100
 var score = 0
-
+var variant = false
+var powerTriple = false
+var powerHeal = false
+var powerInvincible = false
+var timer = 0
 
 # Declare member variables here. Examples:
 # var a = 2

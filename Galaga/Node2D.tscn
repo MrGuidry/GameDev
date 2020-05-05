@@ -58,10 +58,10 @@ __meta__ = {
 }
 
 [node name="life_label" type="Label" parent="hud"]
-margin_left = 500.0
-margin_top = -1.0
-margin_right = 593.0
-margin_bottom = 40.0
+margin_left = 444.228
+margin_top = 0.507339
+margin_right = 537.228
+margin_bottom = 41.5073
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Lives: 0"

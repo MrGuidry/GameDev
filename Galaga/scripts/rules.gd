@@ -6,8 +6,9 @@ func _on_Button_pressed():
 
 func _on_playAgain_pressed():
 	Global.score=0
-	Global.lives=5
+	Global.lives=100
 	Global.respawned = true
+	Global.multi = 1001
 	get_tree().change_scene("res://welcome.tscn")
 
 func _on_gameOver_ready():

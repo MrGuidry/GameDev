@@ -2,7 +2,6 @@ extends KinematicBody2D
 
 var speed = Vector2(0,0)
 var movement = 400
-var powerTriple = false
 
 var projectile = preload("res://Projectile.tscn")
 
@@ -22,17 +21,15 @@ func get_input():
 		if(position.x < 270):
 			speed.x = movement
 	if Input.is_action_just_pressed("Spacebar") && get_tree().get_nodes_in_group("Enemy").size() != 0:
-		if(!powerTriple && get_tree().get_nodes_in_group("Bullets").size() < 4):
+		if(!Global.powerTriple && get_tree().get_nodes_in_group("Bullets").size() < 4):
 			$ShotSound.play()
 			shoot()
-		elif(powerTriple && get_tree().get_nodes_in_group("Bullets").size() < 12):
+		elif(Global.powerTriple && get_tree().get_nodes_in_group("Bullets").size() < 12):
 			$ShotSound.play()
 			shoot()
-	if Input.is_action_just_pressed("TripleShot"):
-		powerTriple = !powerTriple
 	
 func shoot():
-	if(powerTriple):
+	if(Global.powerTriple):
 		var bullet = projectile.instance()
 		var bullet2 = projectile.instance()
 		var bullet3 = projectile.instance()

@@ -17,16 +17,19 @@ func _ready():
 
 func _process(delta):
 	if(Global.lives != 0 ):
-		var livesString = "Lives: " + (str(Global.lives))
+		var livesString = "Health: " + (str(Global.lives))
 		life_label.set_text(livesString)
 	else:
 		get_tree().change_scene("res://gameOver.tscn")
 		
-		
-		
-	if enemies.get_child_count() == 0 && get_tree().get_nodes_in_group("Bullets").size() == 0:
+	if get_tree().get_nodes_in_group("Enemy").size()  == 0 && get_tree().get_nodes_in_group("Bullets").size() == 0:
 		spawn_enemies(21)
 		
+	if(Global.timer > 0):
+		Global.timer -= delta
+		if(Global.timer <= 0):
+			Global.powerTriple = false
+			Global.powerInvincible = false
 
 func spawn_enemies(num):
 	for i in num:

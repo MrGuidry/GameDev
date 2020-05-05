@@ -14,3 +14,7 @@ func _ready():
 
 func _on_button_pressed(scene_to_load): 
 	get_tree().change_scene(scene_to_load)
+
+func _on_newHardcore_pressed():
+	Global.variant = true
+	print("yeetskeet")
