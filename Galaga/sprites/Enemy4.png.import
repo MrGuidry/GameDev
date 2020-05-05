@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Background.webp-1b61f9b486a087a5d27977639d9dc15f.stex"
+path="res://.import/Enemy4.png-6aad7b0b1187040fbb124d338d6045ae.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Background.webp"
-dest_files=[ "res://.import/Background.webp-1b61f9b486a087a5d27977639d9dc15f.stex" ]
+source_file="res://sprites/Enemy4.png"
+dest_files=[ "res://.import/Enemy4.png-6aad7b0b1187040fbb124d338d6045ae.stex" ]
 
 [params]
 

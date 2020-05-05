@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/galaga-ship-png-2-transparent.png-5f841627d3996b57bcb428533d4bc944.stex"
+path="res://.import/krakatoaStar.png-0ce8eac2c24731dcd621a9eb3661617c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/galaga-ship-png-2-transparent.png"
-dest_files=[ "res://.import/galaga-ship-png-2-transparent.png-5f841627d3996b57bcb428533d4bc944.stex" ]
+source_file="res://sprites/krakatoaStar.png"
+dest_files=[ "res://.import/krakatoaStar.png-0ce8eac2c24731dcd621a9eb3661617c.stex" ]
 
 [params]
 

@@ -2,6 +2,7 @@ extends Area2D
 
 var type
 onready var type_label = get_node("type")
+onready var death = get_node("death")
 
 func _ready():
 	var rando = randi()%100+1
@@ -12,6 +13,7 @@ func _ready():
 	else:
 		type = 'H'
 	type_label.set_text(type)
+	death.interpolate_property(self, 'scale', get_scale(), Vector2(0, 0), 0.1, Tween.TRANS_QUAD, Tween.EASE_OUT)
 	
 func _process(delta):
 	if(position.y >= 1000):
@@ -38,4 +40,7 @@ func _on_powerup_body_entered(body):
 				Global.lives=100
 			else:
 				Global.lives += 5
+	$PowerupSound.play()
+	death.start()
+	yield ($PowerupSound, "finished")
 	queue_free()

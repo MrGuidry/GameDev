@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Laser_Shoot2.wav-d23c434402c644bd7cc810e0befe0f9b.sample"
+path="res://.import/EnemyHurt.wav-bda5bf739ef0503fe81c423d8e615642.sample"
 
 [deps]
 
-source_file="res://sound/Laser_Shoot2.wav"
-dest_files=[ "res://.import/Laser_Shoot2.wav-d23c434402c644bd7cc810e0befe0f9b.sample" ]
+source_file="res://sound/EnemyHurt.wav"
+dest_files=[ "res://.import/EnemyHurt.wav-bda5bf739ef0503fe81c423d8e615642.sample" ]
 
 [params]
 

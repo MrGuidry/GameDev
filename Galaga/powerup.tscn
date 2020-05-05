@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/powerup.gd" type="Script" id=1]
 [ext_resource path="res://sprites/powerup.png" type="Texture" id=2]
 [ext_resource path="res://font/ocean.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://sound/Powerup.wav" type="AudioStream" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 20.4595
@@ -18,22 +19,27 @@ collision_mask = 16
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.12851, -0.257025 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -0.0411968, -0.128819 )
+position = Vector2( 1.02809, 0.385536 )
 scale = Vector2( 0.474205, 0.474205 )
 texture = ExtResource( 2 )
 
 [node name="type" type="Label" parent="."]
-margin_left = -12.5983
-margin_top = -16.0843
-margin_right = 10.4017
-margin_bottom = 14.9157
+margin_left = -10.0
+margin_top = -16.0
+margin_right = 11.0
+margin_bottom = 16.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="PowerupSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="death" type="Tween" parent="."]
 [connection signal="body_entered" from="." to="." method="_on_powerup_body_entered"]

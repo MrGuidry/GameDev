@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal grab_powerup
+
 var speed = Vector2(0,0)
 var movement = 400
 
@@ -10,6 +12,7 @@ func _ready():
 
 func _process(delta):
 	get_input()
+	_change_sprite()
 	move_and_slide(speed)
 	
 func get_input():
@@ -24,8 +27,8 @@ func get_input():
 		if(!Global.powerTriple && get_tree().get_nodes_in_group("Bullets").size() < 4):
 			$ShotSound.play()
 			shoot()
-		elif(Global.powerTriple && get_tree().get_nodes_in_group("Bullets").size() < 12):
-			$ShotSound.play()
+		elif(Global.powerTriple && get_tree().get_nodes_in_group("Bullets").size() < 6):
+			$TripleShotSound.play()
 			shoot()
 	
 func shoot():
@@ -57,4 +60,13 @@ func shoot():
 		bullet.position.y -= 60
 		get_parent().add_child(bullet)
 		
-
+var starPower = preload("res://sprites/krakatoaStar.png")
+var regular = preload("res://sprites/krakatoa.png")
+var triplePower = preload("res://sprites/krakatoaTriple.png")
+func _change_sprite():
+	if(Global.powerInvincible):
+		get_node("Sprite").set_texture(starPower)
+	elif(Global.powerTriple):
+		get_node("Sprite").set_texture(triplePower)
+	else:
+		get_node("Sprite").set_texture(regular)
