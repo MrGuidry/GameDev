@@ -9,6 +9,7 @@ func _on_playAgain_pressed():
 	Global.lives=100
 	Global.respawned = true
 	Global.multi = 1001
+	Global.variant = false
 	get_tree().change_scene("res://welcome.tscn")
 
 func _on_gameOver_ready():

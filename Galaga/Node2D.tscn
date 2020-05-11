@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://sprites/bg wip.png" type="Texture" id=1]
 [ext_resource path="res://scripts/ParallaxLayer.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://font/ocean.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://sound/POL-foggy-forest-short.wav" type="AudioStream" id=6]
 [ext_resource path="res://sound/EnemyHit1.wav" type="AudioStream" id=7]
+[ext_resource path="res://sound/pop.wav" type="AudioStream" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -69,9 +70,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="stage_label" type="Label" parent="hud"]
+margin_left = 239.242
+margin_top = -0.600693
+margin_right = 332.242
+margin_bottom = 72.3993
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Stage 1
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 autoplay = true
 
 [node name="HitSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
+
+[node name="PufferPopSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
