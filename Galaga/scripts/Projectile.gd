@@ -1,32 +1,33 @@
-#extends KinematicBody2D
-#
-#var velocity = Vector2()
-#
-#
-#func _ready():
-#	velocity.y = -400
-#
-#
-#func _process(delta):
-#	if(position.y < -700):
-#		queue_free()
-#	print (test_move(transform, velocity))
-#	move_and_collide(velocity)
-#
-#
-#func leftShot():
-#	velocity.x = -50
-#
-#func rightShot():
-#	velocity.x = 50
-
 extends Area2D
 
+# ---------------------------------------
+# Description:
+# Methods/Attributes pertaining to the 
+# PLAYER projectiles
+#-----------------------------------------
+
+# CONST ATTRIBUTES:
+const RISE_SPEED = 8 # speed in which the projectile moves up the screen.
+
+# Projectile Variable Attributes:
 var side = 0
 
+#----------------------------------------------------------------------	
+# Initialization 
+
 func _ready():
-	pass
+	pass # NO ON_READY ACTIONS NEEDED
+
+# Initializes Direction of a shot 
+# ** USED FOR TRIPLE SHOT ONLY **	
+func leftShot():
+	side = 1
 	
+func rightShot():
+	side = 2
+#-----------------------------------------------------------------------
+
+# Movement of a projectile in a particular motion	
 func _process(delta):
 	if(position.y < -700):
 		queue_free()
@@ -34,15 +35,9 @@ func _process(delta):
 		position.x -= 1
 	if(side == 2):
 		position.x += 1
-	position.y -= 8
-	
-	
-func leftShot():
-	side = 1
-	
-func rightShot():
-	side = 2
+	position.y -= RISE_SPEED
 
 
+# Upon area entered (projectile/enemy)
 func _on_Projectile_area_entered(area):
-	queue_free()
+	queue_free() # destroy

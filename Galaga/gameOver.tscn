@@ -2,7 +2,7 @@
 
 [ext_resource path="res://font/ocean.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://sprites/bg wip.png" type="Texture" id=2]
-[ext_resource path="res://scripts/rules.gd" type="Script" id=3]
+[ext_resource path="res://scripts/gameHandle.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 45
