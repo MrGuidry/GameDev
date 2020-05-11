@@ -36,10 +36,10 @@ func _on_powerup_body_entered(body):
 			Global.timer = 7
 			print("You got T")
 		'H': 
-			if(Global.lives+5 >= 100):
+			if(Global.lives+3 >= 100):
 				Global.lives=100
 			else:
-				Global.lives += 5
+				Global.lives += 3
 	$PowerupSound.play()
 	death.start()
 	yield ($PowerupSound, "finished")

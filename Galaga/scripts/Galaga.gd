@@ -2,8 +2,10 @@ extends Node2D
 
 onready var enemy = preload("res://Enemy.tscn")
 onready var enemies = get_node("Enemies")
+onready var pufferfish = preload("res://pufferfish.tscn")
 onready var score_label = get_node("hud/score_label")
 onready var life_label = get_node("hud/life_label")
+onready var stage_label = get_node("hud/stage_label")
 
 var screensize
 var stage
@@ -17,6 +19,12 @@ func _ready():
 	print(stage)
 
 func _process(delta):
+	if(randi()%5000+1 <= 2):
+		var p = pufferfish.instance()
+		p.position.x = randi()%535+35
+		p.position.y = -20
+		p.connect("on_Hit", self, "_on_puffer_hit")
+		add_child(p)
 	if(Global.lives > 0 ):
 		var livesString = "Health: " + (str(Global.lives))
 		life_label.set_text(livesString)
@@ -25,7 +33,8 @@ func _process(delta):
 		
 	if get_tree().get_nodes_in_group("Enemy").size()  == 0 && get_tree().get_nodes_in_group("Bullets").size() == 0:
 		stage+=1
-		print(stage)
+		var stageString = "Stage " + (str(stage))
+		stage_label.set_text(stageString)
 		if(stage <= 3):
 			spawn_enemies(21)
 		elif(stage <= 6):
@@ -136,4 +145,7 @@ func _on_enemy_killed():
 	var scoreStr =  "Score: " + (str(Global.score))	
 	score_label.set_text(scoreStr)
 	$HitSound.play()
+	
+func _on_puffer_hit():
+	$PufferPopSound.play()
 
